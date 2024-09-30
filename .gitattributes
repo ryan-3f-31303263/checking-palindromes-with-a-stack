@@ -1,2 +1,37 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+class Stack(): #class defination
+    #constructor method
+    def __init__(self):
+        self.body = []
+    
+    
+    def push(self,item):
+        self.body.append(item)
+        
+    def pop_s(self):
+        opt=self.body[len(self.body)-1]
+        self.body.pop()
+        return(opt)
+    
+    def display_stack(self):
+        print(self.body)
+    
+    def peep_stack(self):
+        return(self.body[len(self.body)-1])
+
+
+stack1=Stack()
+ipt=list(input('word: '))
+
+for itm in ipt:
+    stack1.push(itm)
+
+r_lst=[]
+while len(stack1.body) != 0:
+    print(stack1.peep_stack())
+    r_lst.append(stack1.pop_s())
+
+if ipt==r_lst:
+    print('palindrome!')
+else:
+    print('not a palindrome.')
+
